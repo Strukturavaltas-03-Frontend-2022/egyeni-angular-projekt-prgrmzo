@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="col-12">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Painter</th>
+          <th>Year</th>
+          <th>Image Link</th>
+          <th>Wishlist</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let painting of paintings">
+          <td>
+            {{ painting.title }}
+          </td>
+          <td>{{ painting.painter }}</td>
+          <td>{{ painting.year }}</td>
+          <td>
+            <a target="_blank" [href]="painting.pUrl">Link</a>
+          </td>
+          <td>{{ painting.isOnWishlist }}</td>
+          <td>Buttons</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
