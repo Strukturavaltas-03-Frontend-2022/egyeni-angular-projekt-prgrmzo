@@ -1,15 +1,21 @@
 .siteBg {
-  background: var(--navbarblue);
+  background-image: url("../../../assets/images/smaller\ Starry\ Night\ sky\ \(6_\ repeat\)jo.jpg");
+  background-size: 20%;
+  height: 100%;
+}
+
+.table {
+  background: var(--bgblue);
 }
 
 .addNew {
-  background: var(--textyellow);
+  background: var(--orange);
   color: black;
 }
 
 .addNew:hover {
   background: black;
-  color: var(--textyellow);
+  color: var(--orange);
 }
 
 .addnew {
@@ -17,7 +23,7 @@
 }
 
 th {
-  color: var(--textyellow);
+  color: var(--turquoiseblue);
 }
 td {
   color: var(--mildyellow);

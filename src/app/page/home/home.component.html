@@ -1,3 +1,19 @@
 <div class="background">
-  <div class="textbox col-8">Painting gallery</div>
+  <div
+    class="textbox col-8 d-flex justify-content-center flex-column align-items-center"
+  >
+    <p class="text intro">Welcome to your own customizable Painting Gallery!</p>
+    <p class="text">
+      Browse among your favourite paintings in
+      <button [routerLink]="['/gallery']" class="btn addNew">Cards View</button>
+      or
+      <button [routerLink]="['/list']" class="btn addNew">List View</button>!
+    </p>
+    <p class="text">
+      Test your knowledge by guessing the Paintings' details in the
+      <button [routerLink]="['/quiz']" class="btn btnEdit">Quiz</button>
+      !
+    </p>
+    <p class="text">Enjoy your stay!</p>
+  </div>
 </div>

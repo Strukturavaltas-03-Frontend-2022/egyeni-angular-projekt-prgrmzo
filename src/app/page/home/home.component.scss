@@ -7,5 +7,39 @@
   height: 100vh;
 }
 .textbox {
-  background-color: red;
+  background-color: rgba(8, 30, 67, 0.8);
+
+  width: 75vw;
+  height: 50vh;
+  border: 2px solid var(--mildyellow);
+  border-radius: 5px;
+}
+.text {
+  color: rgba(127, 197, 220, 1);
+  font-family: Elegant;
+  font-weight: lighter;
+  font-size: 1.5rem;
+}
+
+.addNew {
+  background: var(--orange);
+  color: black;
+}
+
+.addNew:hover {
+  background: black;
+  color: var(--orange);
+}
+
+.addnew {
+  border: none;
+}
+
+.btnEdit {
+  background: var(--lightblue);
+  color: black;
+}
+.btnEdit:hover {
+  background: black;
+  color: var(--lightblue);
 }

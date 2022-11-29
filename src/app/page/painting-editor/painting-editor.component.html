@@ -1,5 +1,5 @@
 <div class="compBg">
-  <div class="w-100 d-flex justify-content-center align-items-center">
+  <div class="w-100 d-flex justify-content-center align-items-center py-3">
     <img [src]="painting.pUrl" style="width: 20%" />
   </div>
 
@@ -17,10 +17,13 @@
             required
           />
           <div
-            [hidden]="paintingForm.controls['title']?.valid"
+            [hidden]="
+              paintingForm.controls['title']?.valid ||
+              paintingForm.controls['title']?.pristine
+            "
             class="error-message customError"
           >
-            Szöveg
+            Please add the painting's title!
           </div>
         </div>
         <div class="form-group">
@@ -34,10 +37,13 @@
             required
           />
           <div
-            [hidden]="paintingForm.controls['painter']?.valid"
+            [hidden]="
+              paintingForm.controls['painter']?.valid ||
+              paintingForm.controls['painter']?.pristine
+            "
             class="error-message customError"
           >
-            Szöveg
+            Please add the painter's name!
           </div>
         </div>
         <div class="form-group">
@@ -51,10 +57,13 @@
             required
           />
           <div
-            [hidden]="paintingForm.controls['year']?.valid"
+            [hidden]="
+              paintingForm.controls['year']?.valid ||
+              paintingForm.controls['year']?.pristine
+            "
             class="error-message customError"
           >
-            Szöveg
+            Please add which year the painting was created!
           </div>
         </div>
         <div class="form-group">
@@ -68,10 +77,13 @@
             required
           />
           <div
-            [hidden]="paintingForm.controls['link']?.valid"
+            [hidden]="
+              paintingForm.controls['link']?.valid ||
+              paintingForm.controls['link']?.pristine
+            "
             class="error-message customError"
           >
-            Szöveg
+            Add the painting's URL!
           </div>
         </div>
         <div class="form-group">
@@ -88,19 +100,21 @@
             <option value="false">No</option>
           </select>
           <div
-            [hidden]="paintingForm.controls['title']?.valid"
+            [hidden]="paintingForm.controls['wishlist']?.valid"
             class="error-message customError"
           >
-            Szöveg
+            Would you like to see this painting on your wall?
           </div>
         </div>
-        <button
-          type="submit"
-          [disabled]="paintingForm.invalid"
-          class="btn btn-block addNew"
-        >
-          Save
-        </button>
+        <div class="d-flex justify-content-center pt-3">
+          <button
+            type="submit"
+            [disabled]="paintingForm.invalid"
+            class="btn btn-block addNew"
+          >
+            Save
+          </button>
+        </div>
       </form>
     </div>
   </div>

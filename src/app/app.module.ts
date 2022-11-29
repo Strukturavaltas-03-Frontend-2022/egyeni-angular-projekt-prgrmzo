@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -15,6 +15,9 @@ import { PaintingCardComponent } from './common/painting-card/painting-card.comp
 import { CardListComponent } from './common/card-list/card-list.component';
 import { WishlistPipe } from './pipe/wishlist.pipe';
 import { PaintingFilterComponent } from './common/painting-filter/painting-filter.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { SortPipe } from './pipe/sort.pipe';
+import { FilterPipe } from './pipe/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -29,8 +32,16 @@ import { PaintingFilterComponent } from './common/painting-filter/painting-filte
     CardListComponent,
     WishlistPipe,
     PaintingFilterComponent,
+    SortPipe,
+    FilterPipe,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    NgxPaginationModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

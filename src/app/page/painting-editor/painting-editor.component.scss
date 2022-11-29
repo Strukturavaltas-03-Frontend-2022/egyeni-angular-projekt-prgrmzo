@@ -1,7 +1,16 @@
 .compBg {
   background: var(--navbarblue);
+
+  padding-bottom: 1.5rem;
+}
+.container {
+  height: 100vh;
 }
 
+input,
+select {
+  margin-top: 0.25rem;
+}
 .labels {
   color: var(--textyellow);
 }

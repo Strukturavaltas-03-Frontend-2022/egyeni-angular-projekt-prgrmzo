@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ConfigService } from 'src/app/service/config.service';
 import { PaintingService } from 'src/app/service/painting.service';
 
@@ -9,7 +9,10 @@ import { PaintingService } from 'src/app/service/painting.service';
 })
 export class PaintingFilterComponent implements OnInit {
   phrase: string = '';
-  keyword: string = '';
+  key: string = '';
+
+  @Output() searchKeyChange: EventEmitter<string> = new EventEmitter();
+  @Output() searchPhraseChange: EventEmitter<string> = new EventEmitter();
 
   paintingFilterKeywords: any[] = this.configService.searchOptions;
 
@@ -19,4 +22,12 @@ export class PaintingFilterComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {}
+
+  onOptionChange(key: string) {
+    this.searchKeyChange.emit(key);
+  }
+
+  onPhraseChange(phrase: string) {
+    this.searchPhraseChange.emit(phrase);
+  }
 }

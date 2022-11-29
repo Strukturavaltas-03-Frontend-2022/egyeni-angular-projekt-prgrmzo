@@ -29,10 +29,24 @@ export class PaintingEditorComponent implements OnInit {
       } else {
         this.pService.fetchOne(params['id']).subscribe((painting) => {
           this.painting = painting;
+          console.log(this.painting);
         });
       }
     });
   }
 
-  onSubmit(painting: Painting): void {}
+  onSubmit(painting: Painting): void {
+    painting.year = Number(painting.year);
+    painting.isOnWishlist = Boolean(painting.isOnWishlist);
+
+    if (this.painting.uniqueId) {
+      this.pService
+        .update(painting)
+        .subscribe((p) => this.router.navigate(['/list']));
+    } else if (!this.painting.uniqueId) {
+      this.pService
+        .create(painting)
+        .subscribe((p) => this.router.navigate(['/list']));
+    }
+  }
 }

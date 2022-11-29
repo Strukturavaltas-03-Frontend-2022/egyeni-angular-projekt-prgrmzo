@@ -13,9 +13,11 @@ export class PaintingService {
 
   constructor(private http: HttpClient) {}
 
-  fetchPaintings() {
+  fetchPaintings(page: string = '') {
     return this.http
-      .get<{ [key: string]: Painting }>(`${this.firebaseUrl}${this.entityName}`)
+      .get<{ [key: string]: Painting }>(
+        `${this.firebaseUrl}${this.entityName}/${page}`
+      )
       .pipe(
         map((responseData) => {
           const paintingsArray: Painting[] = [];
@@ -34,7 +36,7 @@ export class PaintingService {
       .get<Painting>(`${this.firebaseUrl}/paintings/${id}.json`)
       .pipe(
         map((responseData) => {
-          responseData['id'] = id;
+          responseData['uniqueId'] = id;
           return responseData;
         })
       );

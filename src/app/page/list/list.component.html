@@ -1,25 +1,40 @@
 <div class="siteBg">
-  <app-painting-filter></app-painting-filter>
-  <div class="d-flex my-3">
+  <app-painting-filter
+    (searchKeyChange)="onSearchKeyChange($event)"
+    (searchPhraseChange)="onSearchPhraseChange($event)"
+  ></app-painting-filter>
+  <div class="d-flex">
     <button [routerLink]="['/paintingeditor']" class="btn addNew mx-auto">
       Add a New Painting
     </button>
   </div>
-  <div class="container">
-    <div class="col-12 siteBg">
+  <div class="container py-3">
+    <div class="col-12">
       <table class="table">
         <thead>
           <tr>
-            <th>Title</th>
-            <th>Painter</th>
-            <th>Year</th>
+            <th (click)="onHeaderSort('title')">
+              Title <i class="fa fa-sort"></i>
+            </th>
+            <th (click)="onHeaderSort('painter')">
+              Painter <i class="fa fa-sort"></i>
+            </th>
+            <th (click)="onHeaderSort('year')">
+              Year <i class="fa fa-sort"></i>
+            </th>
             <th>Image Link</th>
             <th>Wishlist</th>
             <th>Action</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let painting of paintings">
+          <tr
+            *ngFor="
+              let painting of paintings
+                | sort: headerSortPhrase:isSorted
+                | filter: key:phrase
+            "
+          >
             <td>
               {{ painting.title }}
             </td>
@@ -28,7 +43,7 @@
             <td>
               <a target="_blank" [href]="painting.pUrl">Link</a>
             </td>
-            <td>{{ painting.isOnWishlist }}</td>
+            <td>{{ painting.isOnWishlist | wishlist }}</td>
             <td>
               <div class="btn-group">
                 <button

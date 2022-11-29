@@ -17,7 +17,9 @@
     </p>
     <p>
       <span class="neutral">Wishlist: </span>
-      <span class="datas">{{ painting.isOnWishlist | wishlist }}</span>
+      <span class="datas" style="padding-bottom: 0.25rem">{{
+        painting.isOnWishlist | wishlist
+      }}</span>
     </p>
     <button
       [routerLink]="['/paintingeditor/', painting.uniqueId]"

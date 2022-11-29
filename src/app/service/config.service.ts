@@ -23,7 +23,7 @@ export class ConfigService {
     { key: 'painter', title: 'Painter' },
     { key: 'year', title: 'Year' },
     { key: 'pUrl', title: "Painting's Link" },
-    { key: 'isOnWishlist', title: 'My wished paintings' },
+    { key: 'isOnWishlist', title: 'Is it on my Wishlist?' },
   ];
 
   constructor() {}

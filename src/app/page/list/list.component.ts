@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { Painting } from 'src/app/model/painting';
 import { PaintingService } from 'src/app/service/painting.service';
 
@@ -9,6 +9,13 @@ import { PaintingService } from 'src/app/service/painting.service';
 })
 export class ListComponent implements OnInit {
   paintings: Painting[] = [];
+
+  headerSortPhrase: string = '';
+
+  isSorted: boolean = false;
+
+  key: string = '';
+  phrase: string = '';
 
   constructor(private paintingService: PaintingService) {
     this.paintingService.fetchPaintings().subscribe((datalist) => {
@@ -28,5 +35,18 @@ export class ListComponent implements OnInit {
             .subscribe((paintings) => location.reload())
         );
     }
+  }
+
+  onHeaderSort(phrase: string) {
+    this.headerSortPhrase = phrase;
+    this.isSorted = !this.isSorted;
+  }
+
+  onSearchKeyChange(key: string) {
+    this.key = key;
+  }
+
+  onSearchPhraseChange(phrase: string) {
+    this.phrase = phrase;
   }
 }

@@ -1,11 +1,14 @@
-<div class="d-flex justify-content-center compBg align-items-center">
-  <div>
+<div class="d-flex justify-content-center compBg align-items-center py-3">
+  <div class="px-1">
     <select
-      [(ngModel)]="keyword"
-      class="form-select bg-dark text-white"
+      [(ngModel)]="key"
+      (change)="onOptionChange(key)"
+      class="form-select customStyle"
       style="height: 2.5rem"
     >
-      <option value="">Search Painting by...</option>
+      <option value="">
+        Search Painting by... <i class="fa fa-chevron-down"></i>
+      </option>
       <option
         *ngFor="let options of paintingFilterKeywords"
         [value]="options.key"
@@ -16,9 +19,10 @@
   </div>
 
   <input
+    (keyup)="onPhraseChange(phrase)"
     [(ngModel)]="phrase"
     type="text"
-    class="form-control w-25 bg-dark text-white"
+    class="form-control w-25 customStyle"
     style="height: 2.5rem"
   />
 </div>
