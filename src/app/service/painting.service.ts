@@ -28,4 +28,32 @@ export class PaintingService {
         })
       );
   }
+
+  fetchOne(id: string) {
+    return this.http
+      .get<Painting>(`${this.firebaseUrl}/paintings/${id}.json`)
+      .pipe(
+        map((responseData) => {
+          responseData['id'] = id;
+          return responseData;
+        })
+      );
+  }
+
+  create(newPainting: Painting) {
+    return this.http.post(`${this.firebaseUrl}${this.entityName}`, newPainting);
+  }
+
+  remove(painting: Painting) {
+    return this.http.delete(
+      `${this.firebaseUrl}paintings/${painting.uniqueId}.json`
+    );
+  }
+
+  update(painting: Painting) {
+    return this.http.patch(
+      `${this.firebaseUrl}paintings/${painting.uniqueId}.json`,
+      painting
+    );
+  }
 }

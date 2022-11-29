@@ -13,7 +13,10 @@ export class CardListComponent implements OnInit {
 
   constructor(private paintingService: PaintingService) {
     this.paintingService.fetchPaintings().subscribe((datalist) => {
+      console.log(datalist);
+
       this.paintings = datalist;
+      console.log(this.paintings);
     });
   }
 

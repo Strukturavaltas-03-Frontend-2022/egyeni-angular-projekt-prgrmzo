@@ -3,6 +3,7 @@
   justify-content: center;
   align-items: center;
   height: 300px;
+  background: var(--bgblue);
 }
 .card-img-top {
   border-radius: 0px;
@@ -11,6 +12,15 @@
 .card {
   border-radius: 0px;
   width: 250px;
+  border: 1px solid var(--mildyellow);
+  cursor: pointer;
+  user-select: none;
+}
+
+.card:hover {
+  position: relative;
+  top: -3px;
+  box-shadow: 0 0 5px 3px var(--orange);
 }
 
 hr {
@@ -22,20 +32,49 @@ hr {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background: var(--bgblue);
 }
 
 .card-title {
   text-align: center;
+  color: var(--textyellow);
 }
 
 p {
   text-align: center;
 }
 
+.neutral {
+  color: var(--mildyellow);
+}
+.datas {
+  font-style: italic;
+  color: var(--turquoiseblue);
+}
+
 .btn {
   width: 50%;
   align-self: center;
   margin-bottom: 0.25rem;
+}
+
+.btnEdit {
+  background: var(--lightblue);
+  color: black;
+}
+.btnEdit:hover {
+  background: black;
+  color: var(--lightblue);
+}
+
+.btnDelete {
+  background: var(--orange);
+  color: black;
+}
+
+.btnDelete:hover {
+  background: black;
+  color: var(--orange);
 }
 
 p {

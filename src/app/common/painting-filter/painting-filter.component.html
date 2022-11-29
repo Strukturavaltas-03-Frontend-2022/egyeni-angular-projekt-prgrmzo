@@ -1,0 +1,24 @@
+<div class="d-flex justify-content-center compBg align-items-center">
+  <div>
+    <select
+      [(ngModel)]="keyword"
+      class="form-select bg-dark text-white"
+      style="height: 2.5rem"
+    >
+      <option value="">Search Painting by...</option>
+      <option
+        *ngFor="let options of paintingFilterKeywords"
+        [value]="options.key"
+      >
+        {{ options.title }}
+      </option>
+    </select>
+  </div>
+
+  <input
+    [(ngModel)]="phrase"
+    type="text"
+    class="form-control w-25 bg-dark text-white"
+    style="height: 2.5rem"
+  />
+</div>

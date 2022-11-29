@@ -1,1 +1,107 @@
-<p>painting-editor works!</p>
+<div class="compBg">
+  <div class="w-100 d-flex justify-content-center align-items-center">
+    <img [src]="painting.pUrl" style="width: 20%" />
+  </div>
+
+  <div class="container">
+    <div class="col-6 offset-3">
+      <form #paintingForm="ngForm" (ngSubmit)="onSubmit(painting)">
+        <div class="form-group">
+          <label for="title" class="labels">Title</label>
+          <input
+            type="text"
+            name="title"
+            id="title"
+            [(ngModel)]="painting.title"
+            class="form-control"
+            required
+          />
+          <div
+            [hidden]="paintingForm.controls['title']?.valid"
+            class="error-message customError"
+          >
+            Szöveg
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="painter" class="labels">Painter</label>
+          <input
+            type="text"
+            name="painter"
+            id="painter"
+            [(ngModel)]="painting.painter"
+            class="form-control"
+            required
+          />
+          <div
+            [hidden]="paintingForm.controls['painter']?.valid"
+            class="error-message customError"
+          >
+            Szöveg
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="year" class="labels">Year</label>
+          <input
+            type="text"
+            name="year"
+            id="year"
+            [(ngModel)]="painting.year"
+            class="form-control"
+            required
+          />
+          <div
+            [hidden]="paintingForm.controls['year']?.valid"
+            class="error-message customError"
+          >
+            Szöveg
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="link" class="labels">Painting's URL</label>
+          <input
+            type="text"
+            name="link"
+            id="link"
+            [(ngModel)]="painting.pUrl"
+            class="form-control"
+            required
+          />
+          <div
+            [hidden]="paintingForm.controls['link']?.valid"
+            class="error-message customError"
+          >
+            Szöveg
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="wishlist" class="labels">Wishlist</label>
+          <select
+            name="wishlist"
+            type="select"
+            id="wishlist"
+            [(ngModel)]="painting.isOnWishlist"
+            class="form-control"
+            required
+          >
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+          </select>
+          <div
+            [hidden]="paintingForm.controls['title']?.valid"
+            class="error-message customError"
+          >
+            Szöveg
+          </div>
+        </div>
+        <button
+          type="submit"
+          [disabled]="paintingForm.invalid"
+          class="btn btn-block addNew"
+        >
+          Save
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

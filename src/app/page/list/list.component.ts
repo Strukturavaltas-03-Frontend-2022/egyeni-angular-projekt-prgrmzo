@@ -17,4 +17,16 @@ export class ListComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
+  onDelete(painting: Painting) {
+    if (confirm('Are you sure you want to DELETE this painting?')) {
+      this.paintingService
+        .remove(painting)
+        .subscribe((painting) =>
+          this.paintingService
+            .fetchPaintings()
+            .subscribe((paintings) => location.reload())
+        );
+    }
+  }
 }

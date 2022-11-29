@@ -1,0 +1,43 @@
+.siteBg {
+  background: var(--navbarblue);
+}
+
+.addNew {
+  background: var(--textyellow);
+  color: black;
+}
+
+.addNew:hover {
+  background: black;
+  color: var(--textyellow);
+}
+
+.addnew {
+  border: none;
+}
+
+th {
+  color: var(--textyellow);
+}
+td {
+  color: var(--mildyellow);
+}
+
+.btnEdit {
+  background: var(--lightblue);
+  color: black;
+}
+.btnEdit:hover {
+  background: black;
+  color: var(--lightblue);
+}
+
+.btnDelete {
+  background: var(--orange);
+  color: black;
+}
+
+.btnDelete:hover {
+  background: black;
+  color: var(--orange);
+}

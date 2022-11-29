@@ -18,5 +18,13 @@ export class ConfigService {
     { text: 'Quiz', link: '/quiz' },
   ];
 
+  searchOptions: any = [
+    { key: 'title', title: 'Title' },
+    { key: 'painter', title: 'Painter' },
+    { key: 'year', title: 'Year' },
+    { key: 'pUrl', title: "Painting's Link" },
+    { key: 'isOnWishlist', title: 'My wished paintings' },
+  ];
+
   constructor() {}
 }

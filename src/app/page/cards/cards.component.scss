@@ -1,0 +1,17 @@
+.siteBg {
+  background: var(--navbarblue);
+}
+
+.addNew {
+  background: var(--textyellow);
+  color: black;
+}
+
+.addNew:hover {
+  background: black;
+  color: var(--textyellow);
+}
+
+.addnew {
+  border: none;
+}

@@ -1,30 +1,50 @@
-<div class="container">
-  <div class="col-12">
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>Title</th>
-          <th>Painter</th>
-          <th>Year</th>
-          <th>Image Link</th>
-          <th>Wishlist</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let painting of paintings">
-          <td>
-            {{ painting.title }}
-          </td>
-          <td>{{ painting.painter }}</td>
-          <td>{{ painting.year }}</td>
-          <td>
-            <a target="_blank" [href]="painting.pUrl">Link</a>
-          </td>
-          <td>{{ painting.isOnWishlist }}</td>
-          <td>Buttons</td>
-        </tr>
-      </tbody>
-    </table>
+<div class="siteBg">
+  <app-painting-filter></app-painting-filter>
+  <div class="d-flex my-3">
+    <button [routerLink]="['/paintingeditor']" class="btn addNew mx-auto">
+      Add a New Painting
+    </button>
+  </div>
+  <div class="container">
+    <div class="col-12 siteBg">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Painter</th>
+            <th>Year</th>
+            <th>Image Link</th>
+            <th>Wishlist</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let painting of paintings">
+            <td>
+              {{ painting.title }}
+            </td>
+            <td>{{ painting.painter }}</td>
+            <td>{{ painting.year }}</td>
+            <td>
+              <a target="_blank" [href]="painting.pUrl">Link</a>
+            </td>
+            <td>{{ painting.isOnWishlist }}</td>
+            <td>
+              <div class="btn-group">
+                <button
+                  [routerLink]="['/paintingeditor/', painting.uniqueId]"
+                  class="btn btnEdit"
+                >
+                  <i class="fa fa-pencil"></i>
+                </button>
+                <button (click)="onDelete(painting)" class="btn btnDelete">
+                  <i class="fa fa-trash"></i>
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>

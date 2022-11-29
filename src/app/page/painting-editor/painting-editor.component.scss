@@ -1,0 +1,25 @@
+.compBg {
+  background: var(--navbarblue);
+}
+
+.labels {
+  color: var(--textyellow);
+}
+
+.customError {
+  color: var(--turquoiseblue);
+}
+
+.addNew {
+  background: var(--textyellow);
+  color: black;
+}
+
+.addNew:hover {
+  background: black;
+  color: var(--textyellow);
+}
+
+.addnew {
+  border: none;
+}
