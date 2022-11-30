@@ -4,15 +4,16 @@
   display: flex;
   justify-content: center;
 
-  height: 100vh;
+  min-height: 100vh;
 }
 .textbox {
   background-color: rgba(8, 30, 67, 0.8);
   margin-top: 3rem;
   width: 75vw;
-  height: 50vh;
+  height: 60vh;
   border: 2px solid var(--mildyellow);
   border-radius: 5px;
+  text-align: center;
 }
 .text {
   color: rgba(127, 197, 220, 1);
