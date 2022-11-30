@@ -1,0 +1,88 @@
+.compBg {
+  background-image: linear-gradient(
+      to right,
+      rgba(20, 20, 20, 0.5),
+      rgba(20, 20, 20, 0.5)
+    ),
+    url(../../../assets/images/2728px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg);
+  background-position: top right;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+.pContainer {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 70vh;
+  padding: 2rem;
+  background-color: rgba(8, 30, 67, 0.8);
+  border: 2px solid var(--mildyellow);
+  border-radius: 5px;
+  &-top {
+    height: 15%;
+  }
+  &-bottom {
+    height: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.sContainer {
+  background: var(--bgblue);
+  padding: 1rem;
+  border: 2px solid var(--mildyellow);
+  border-radius: 5px;
+}
+
+.sContainer p {
+  color: var(--mildyellow);
+}
+
+img {
+  width: 55%;
+}
+
+.text {
+  color: rgba(127, 197, 220, 1);
+  font-family: Elegant;
+  font-weight: lighter;
+  font-size: 1.5rem;
+}
+
+.addNew {
+  background: var(--textyellow);
+  color: black;
+}
+
+.addNew:hover {
+  background: black;
+  color: var(--textyellow);
+}
+
+.btnEdit {
+  background: var(--lightblue);
+  color: white;
+}
+.btnEdit:hover {
+  background: black;
+  color: var(--lightblue);
+}
+
+.title {
+  color: var(--orange);
+  font-weight: bolder;
+}
+
+.painter {
+  color: var(--turquoiseblue);
+  font-style: italic;
+}
+
+.year {
+  text-decoration: underline;
+}

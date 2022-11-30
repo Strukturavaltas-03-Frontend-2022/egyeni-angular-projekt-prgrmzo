@@ -1,8 +1,11 @@
 <div class="siteBg">
-  <app-painting-filter></app-painting-filter>
+  <!-- <app-painting-filter
+    (searchKeyChange)="onSearchKeyChange($event)"
+    (searchPhraseChange)="onSearchPhraseChange($event)"
+  ></app-painting-filter> -->
   <div class="d-flex">
-    <button [routerLink]="['/paintingeditor']" class="btn addNew mx-auto">
-      Add a New Painting
+    <button [routerLink]="['/paintingeditor']" class="btn addNew mx-auto my-3">
+      Add New Painting
     </button>
   </div>
   <app-card-list></app-card-list>

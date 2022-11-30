@@ -14,9 +14,12 @@ export class CardListComponent implements OnInit {
   page: number = 1;
   pages: number[] = [];
 
+  sliceEnd: number = 20;
+
   constructor(private paintingService: PaintingService) {
     this.paintingService.fetchPaintings().subscribe((datalist) => {
-      // this.paintings = datalist;
+      this.paintings = datalist;
+
       for (let i = 0; i < Math.ceil(datalist.length / 20); i++) {
         this.pages.push(i + 1);
       }
@@ -25,28 +28,22 @@ export class CardListComponent implements OnInit {
 
   onPage(page: number): void {
     this.page = page;
-    this.refreshPage();
+    this.sliceEnd = page * 20;
   }
 
   prevPage(): void {
     if (this.page > 1) {
       this.page = this.page - 1;
+      this.sliceEnd = this.page * 20;
     }
-    this.refreshPage();
   }
 
   nextPage(): void {
     if (this.page !== this.pages.length) {
       this.page = this.page + 1;
+      this.sliceEnd = this.page * 20;
     }
-    this.refreshPage();
   }
 
   ngOnInit(): void {}
-
-  refreshPage(): void {
-    this.paintingService
-      .fetchPaintings(`?_page=${this.page}&_limit=20`)
-      .subscribe((dataList) => (this.paintings = dataList));
-  }
 }

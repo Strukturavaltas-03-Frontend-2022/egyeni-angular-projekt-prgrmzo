@@ -16,7 +16,8 @@ export class PaintingCardComponent implements OnInit {
   ngOnInit(): void {}
 
   onDelete(painting: Painting) {
-    if (confirm('Are you sure you want to DELETE this painting?')) {
+    const answer = prompt('Plase type DELETE to remove this painting!');
+    if (answer === 'DELETE') {
       this.paintingService
         .remove(painting)
         .subscribe((painting) =>

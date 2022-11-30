@@ -1,1 +1,33 @@
-<p>quiz works!</p>
+<div class="compBg">
+  <div class="pContainer col-8">
+    <div class="pContainer-top">
+      <p class="text">
+        Test your knowledge by guessing the paintings' details!
+      </p>
+    </div>
+    <div class="pContainer-bottom">
+      <img [src]="selectedPainting.pUrl" />
+    </div>
+  </div>
+  <div class="my-3">
+    <button (click)="onGenerateNew(); seeSolution = false" class="btn addNew">
+      Next Painting
+    </button>
+  </div>
+  <div *ngIf="seeSolution === false" class="mb-3">
+    <button (click)="seeSolution = true" class="btn btnEdit">
+      See Solution
+    </button>
+  </div>
+  <div *ngIf="seeSolution === true">
+    <div class="sContainer">
+      <p class="m-0">
+        <span class="title">{{ selectedPainting.title }}</span
+        >, created by
+        <span class="painter">{{ selectedPainting.painter }}</span> in
+        <span class="year">{{ selectedPainting.year }}</span
+        >.
+      </p>
+    </div>
+  </div>
+</div>

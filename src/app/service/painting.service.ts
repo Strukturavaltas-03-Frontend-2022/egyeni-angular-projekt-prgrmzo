@@ -13,11 +13,9 @@ export class PaintingService {
 
   constructor(private http: HttpClient) {}
 
-  fetchPaintings(page: string = '') {
+  fetchPaintings() {
     return this.http
-      .get<{ [key: string]: Painting }>(
-        `${this.firebaseUrl}${this.entityName}/${page}`
-      )
+      .get<{ [key: string]: Painting }>(`${this.firebaseUrl}${this.entityName}`)
       .pipe(
         map((responseData) => {
           const paintingsArray: Painting[] = [];

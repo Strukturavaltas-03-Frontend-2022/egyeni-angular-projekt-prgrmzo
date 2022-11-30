@@ -1,7 +1,12 @@
 .siteBg {
-  background-image: url("../../../assets/images/smaller\ Starry\ Night\ sky\ \(6_\ repeat\)jo.jpg");
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.1)
+    ),
+    url("../../../assets/images/smaller\ Starry\ Night\ sky\ \(6_\ repeat\)jo.jpg");
   background-size: 20%;
-  height: 100%;
+  min-height: 100vh;
 }
 
 .table {
@@ -9,13 +14,13 @@
 }
 
 .addNew {
-  background: var(--orange);
+  background: var(--textyellow);
   color: black;
 }
 
 .addNew:hover {
   background: black;
-  color: var(--orange);
+  color: var(--textyellow);
 }
 
 .addnew {

@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Painting } from 'src/app/model/painting';
 import { PaintingService } from 'src/app/service/painting.service';
 

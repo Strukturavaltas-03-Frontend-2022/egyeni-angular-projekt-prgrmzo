@@ -6,13 +6,13 @@ import { Painting } from '../model/painting';
 })
 export class FilterPipe implements PipeTransform {
   transform(value: Painting[], key: string, phrase: string): Painting[] {
-    console.log(key, phrase);
     if (!Array.isArray(value) || !key || !phrase) {
       return value;
     } else {
       phrase = phrase.toLowerCase();
-      key = key.toLowerCase();
-      return value.filter((painting) => painting[key].includes(phrase));
+      return value.filter((painting) =>
+        painting[key].toLowerCase().includes(phrase)
+      );
     }
   }
 }

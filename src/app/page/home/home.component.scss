@@ -1,14 +1,14 @@
 .background {
   background-image: url(../../../assets/images/2728px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg);
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+
   height: 100vh;
 }
 .textbox {
   background-color: rgba(8, 30, 67, 0.8);
-
+  margin-top: 3rem;
   width: 75vw;
   height: 50vh;
   border: 2px solid var(--mildyellow);
